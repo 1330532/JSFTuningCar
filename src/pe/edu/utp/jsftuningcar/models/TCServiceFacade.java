@@ -7,6 +7,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by Vanessa on 21/07/2016.
@@ -32,5 +33,29 @@ public class TCServiceFacade {
         } catch (NamingException | SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    //Entitys
+
+    private AccesoriesEntity getAccessoriesEntity(){
+        AccesoriesEntity accesoriesEntity = new AccesoriesEntity();
+        accesoriesEntity.setConnection(connection);
+        return accesoriesEntity;
+    }
+
+    private ClientsEntity getClientsEntity(){
+        ClientsEntity clientsEntity = new ClientsEntity();
+        clientsEntity.setConnection(connection);
+        return clientsEntity;
+    }
+
+    //List about data from tables
+
+    public List<Accessory> getAccesories(){
+        return getAccessoriesEntity().getAccessories();
+    }
+
+    public List<Client> getClients(){
+        return getClientsEntity().getClients();
     }
 }

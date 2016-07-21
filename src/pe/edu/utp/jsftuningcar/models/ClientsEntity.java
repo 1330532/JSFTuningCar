@@ -22,7 +22,7 @@ public class ClientsEntity {
     }
 
     public List<Client> getClients(){
-        String sql = "SELECT * FROM dbtuning";
+        String sql = "SELECT * FROM cliente";
         List<Client> clients = new ArrayList<>();
         if (connection == null){ return null; }
         try {

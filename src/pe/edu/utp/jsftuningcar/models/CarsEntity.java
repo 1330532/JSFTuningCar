@@ -22,7 +22,30 @@ public class CarsEntity {
     }
 
     public List<Car> getCars(){
-        String sql = "SELECT * FROM dbtuning";
+        String sql = "SELECT * FROM auto";
+        List<Car> cars = new ArrayList<>();
+        if (connection == null){ return null; }
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs == null) return null;
+            while (rs.next()){
+                Car car = new Car();
+                car.setId(rs.getString("codauto"));
+                car.setBrand(rs.getString("marca"));
+                car.setModel(rs.getString("modelo"));
+                car.setColor(rs.getString("color"));
+                car.setIdClient(rs.getString("codcli")); //duda
+            }
+            return cars;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public List<Car> getCarsByClient(Client client){
+        String sql = "SELECT * FROM auto WHERE codcli = "+ client.getId();
         List<Car> cars = new ArrayList<>();
         if (connection == null){ return null; }
         try {

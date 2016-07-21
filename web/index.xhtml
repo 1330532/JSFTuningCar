@@ -5,7 +5,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
+<head>
+</head>
+<body>
+<f:view>
+   <h:outputLabel value="Hello, what do you want to check?" style="align-content: center"/>
+   <br/><br/>
+   <h:form>
+      <h:commandButton value="List Clients" action="ListClients"></h:commandButton>
+      <br/><br/>
+      <h:commandButton value="List Accessories" action="ListAccesories"></h:commandButton>
+   </h:form>
+</f:view>
+</body>
 </html>

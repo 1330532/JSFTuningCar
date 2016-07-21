@@ -2,6 +2,7 @@ package pe.edu.utp.jsftuningcar.models;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.List;
 
 /**
  * Created by Vanessa on 21/07/2016.
@@ -14,6 +15,7 @@ public class Client {
     private String lastName;
     private String firstName;
     private String dir;
+    private List<Car> cars;
 
     public Client(String id, String lastName, String firstName, String dir){
         this.setId(id);
@@ -55,5 +57,20 @@ public class Client {
 
     public void setDir(String dir) {
         this.dir = dir;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public String getCarsBrand() {
+        String result ="";
+        for(Car car : cars)
+            result += (result == "" ? car.getBrand() : ", "+car.getBrand());
+        return result;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
     }
 }

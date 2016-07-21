@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Vanessa on 21/07/2016.
  */
-public class AccesoriesEntity {
+public class ServiceCarsEntity {
     private Connection connection;
 
     public Connection getConnection() {
@@ -21,23 +21,25 @@ public class AccesoriesEntity {
         this.connection = connection;
     }
 
-    public List<Accessory> getAccessories(){
-        String sql = "SELECT * FROM accesorio";
-        List<Accessory> accessories = new ArrayList<>();
+    public List<ServiceCar> getServiceCarsList(){
+        String sql = "SELECT * FROM servicio";
+        List<ServiceCar> serviceCars = new ArrayList<>();
         if (connection == null){ return null; }
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs == null) return null;
             while (rs.next()){
-                Accessory accessory = new Accessory();
-                accessory.setId(rs.getString("codacc"));
-                accessory.setDesc(rs.getString("descripcion"));
-                accessory.setPrice(rs.getInt("precio"));
-                accessory.setCant(rs.getInt("cantidad"));
-                accessories.add(accessory);
+                ServiceCar serviceCar = new ServiceCar();
+                serviceCar.setId(rs.getString("codserv"));
+                serviceCar.setDesc(rs.getString("descripcion"));
+                serviceCar.setPrice(rs.getInt("precio"));
+                serviceCar.setDate(rs.getString("fecha"));
+                serviceCar.setIdAccessory(rs.getString("codacc")); //duda
+                serviceCar.setIdClient(rs.getString("codcli"));  //duda
+                serviceCars.add(serviceCar);
             }
-            return accessories;
+            return serviceCars;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
