@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/web/BootstrapModule/BootstrapModule.iml" filepath="$PROJECT_DIR$/web/BootstrapModule/BootstrapModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/JSFTuningCar.iml" filepath="$PROJECT_DIR$/JSFTuningCar.iml" />
     </modules>
   </component>
