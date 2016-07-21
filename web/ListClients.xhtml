@@ -10,6 +10,9 @@
     <br/><br/>
     <h:commandButton value="Back" action="index"></h:commandButton>
     <br/><br/>
+    <br/>
+    <h:outputLabel value="Count Clients: #{tcservicefacade.clientsCount}"/>
+    <br/>
     <h:dataTable value="#{tcservicefacade.clients}" var="client">
         <h:column>
             <f:facet name="header"> ID </f:facet>

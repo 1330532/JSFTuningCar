@@ -2,6 +2,7 @@ package pe.edu.utp.jsftuningcar.models;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.List;
 
 /**
  * Created by Vanessa on 21/07/2016.
@@ -15,6 +16,7 @@ public class Accessory {
     private String desc;
     private int price;
     private int cant;
+
 
     public Accessory(String id, String desc, int price, int cant){
         this.setId(id);

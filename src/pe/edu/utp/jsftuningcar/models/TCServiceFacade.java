@@ -58,4 +58,10 @@ public class TCServiceFacade {
     public List<Client> getClients(){
         return getClientsEntity().getClients();
     }
+
+    //Cantidad de clientes y accesorios
+
+    public int getClientsCount() { return getClientsEntity().getClients().size(); }
+
+    public int getAcessoriesCount() { return getAccessoriesEntity().getAccessories().size(); }
 }
