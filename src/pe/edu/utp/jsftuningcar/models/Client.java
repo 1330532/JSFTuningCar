@@ -11,14 +11,14 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Client {
     private String id;
-    private String lastname;
-    private String firstname;
+    private String lastName;
+    private String firstName;
     private String dir;
 
-    public Client(String id, String lastname, String firstname, String dir){
+    public Client(String id, String lastName, String firstName, String dir){
         this.setId(id);
-        this.setLastname(lastname);
-        this.setFirstname(firstname);
+        this.setLastName(lastName);
+        this.setFirstName(firstName);
         this.setDir(dir);
     }
 
@@ -33,20 +33,20 @@ public class Client {
         this.id = id;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getDir() {
