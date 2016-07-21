@@ -7,23 +7,23 @@ import javax.faces.bean.SessionScoped;
  * Created by Vanessa on 21/07/2016.
  */
 
-@ManagedBean(name = "accesorio")
+@ManagedBean(name = "accessory")
 @SessionScoped
-public class Accesorio {
+public class Accessory {
 
     private String id;
     private String desc;
-    private int precio;
-    private int cantidad;
+    private int price;
+    private int cant;
 
-    public Accesorio(String id, String desc, int precio, int cantidad){
+    public Accessory(String id, String desc, int price, int cant){
         this.setId(id);
         this.setDesc(desc);
-        this.setPrecio(precio);
-        this.setCantidad(cantidad);
+        this.setPrice(price);
+        this.setCant(cant);
     }
 
-    public Accesorio(){
+    public Accessory(){
     }
 
 
@@ -43,19 +43,19 @@ public class Accesorio {
         this.desc = desc;
     }
 
-    public int getPrecio() {
-        return precio;
+    public int getPrice() {
+        return price;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getCant() {
+        return cant;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCant(int cant) {
+        this.cant = cant;
     }
 }
