@@ -37,10 +37,10 @@ public class TCServiceFacade {
 
     //Entitys
 
-    private AccesoriesEntity getAccessoriesEntity(){
-        AccesoriesEntity accesoriesEntity = new AccesoriesEntity();
-        accesoriesEntity.setConnection(connection);
-        return accesoriesEntity;
+    private AccessoriesEntity getAccessoriesEntity(){
+        AccessoriesEntity accessoriesEntity = new AccessoriesEntity();
+        accessoriesEntity.setConnection(connection);
+        return accessoriesEntity;
     }
 
     private ClientsEntity getClientsEntity(){

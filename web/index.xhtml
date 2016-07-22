@@ -11,10 +11,12 @@
 <f:view>
    <h:outputLabel value="Hello, what do you want to check?" style="align-content: center"/>
    <br/><br/>
-   <h:form>
-      <h:commandButton value="List Clients" action="ListClients"></h:commandButton>
-      <br/><br/>
-      <h:commandButton value="List Accessories" action="ListAccesories"></h:commandButton>
+   <h:form id="index">
+      <ul><h:link value="List Clients" outcome="ListClients"/></ul>
+      <h:commandButton id="ListClients" value="List Clients" action="ListClients"/>
+   <br/><br/>
+      <ul><h:link value="List Accessories" outcome="ListAccessories"/></ul>
+      <h:commandButton id="ListAccessories" value="List Accessories" action="ListAccessories"/>
    </h:form>
 </f:view>
 </body>

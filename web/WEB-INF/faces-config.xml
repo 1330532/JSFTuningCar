@@ -7,29 +7,27 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
+            <from-action>#{tcservicefacade.clients}</from-action>
+            <from-outcome>success</from-outcome>
             <to-view-id>/ListClients.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <to-view-id>/ListAccesories.xhtml</to-view-id>
+            <from-action>#{tcservicefacade.accesories}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ListAccessories.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 
     <navigation-rule>
         <from-view-id>/ListClients.xhtml</from-view-id>
         <navigation-case>
+            <if id="index"/>
+            <from-outcome>success</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <from-view-id>/ListAccesories.xhtml</from-view-id>
         <navigation-case>
-            <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-
-    <navigation-rule>
-        <from-view-id>/ListClients.xhtml</from-view-id>
-        <navigation-case>
+            <if id="AddClient" />
+            <from-outcome>success</from-outcome>
             <to-view-id>/AddClient.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -37,7 +35,24 @@
     <navigation-rule>
         <from-view-id>/AddClient.xhtml</from-view-id>
         <navigation-case>
+            <from-action>#{tcservicefacade.clients}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ListClients.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <if id="ListClients" />
+            <from-outcome>success</from-outcome>
             <to-view-id>/ListClients.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/ListAccessories.xhtml</from-view-id>
+        <navigation-case>
+            <if id="index1" />
+            <from-outcome>success</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
 </faces-config>

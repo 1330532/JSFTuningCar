@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Vanessa on 21/07/2016.
  */
-public class AccesoriesEntity {
+public class AccessoriesEntity {
     private Connection connection;
 
     public Connection getConnection() {

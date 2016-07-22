@@ -8,7 +8,9 @@
 <f:view>
     <h:outputLabel value="Accessories Table"/>
     <br/><br/>
-    <h:commandButton value="Back" action="index"></h:commandButton>
+    <h:form>
+    <h:commandButton id="index1" value="Back" action="index"/>
+    </h:form>
     <br/><br/>
     <br/>
     <h:outputLabel value="Count Accesories: #{tcservicefacade.acessoriesCount}"/>

@@ -6,8 +6,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:form>
-        <h:outputLabel value="Add New Client"/>
+    <h:form id="AddClient">
+        <h:outputLabel value="Add New Client" />
         <br/><br/>
         <h:outputText value="ID : "/>
         <h:inputText id="id" value="#{client.id}"/>
@@ -21,8 +21,8 @@
         <h:outputText value="Address : "/>
         <h:inputText id="dir" value="#{client.dir}"/>
         <br/><br/>
-        <h:commandButton value="SUBMIT" action="ListClients"></h:commandButton>
-        <h:commandButton value="CANCEL" action="ListClients"></h:commandButton>
+        <h:commandButton value="SUBMIT" action="ListClients"/>
+        <h:commandButton id="ListClients" value="BACK" action="ListClients"/>
     </h:form>
 </f:view>
 </html>
