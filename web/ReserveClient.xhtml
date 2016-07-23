@@ -9,19 +9,20 @@
     <h:form id="AddClient">
         <h:outputLabel value="Add New Client" />
         <br/><br/>
-        <h:outputText value="ID : "/>
-        <h:inputText id="id" value="#{client.id}"/>
-        <br/><br/>
-        <h:outputText value="First Name : "/>
-        <h:inputText id="firstname" value="#{client.firstName}"/>
-        <br/><br/>
-        <h:outputText value="Last Name : "/>
-        <h:inputText id="lastname" value="#{client.lastName}"/>
-        <br/><br/>
-        <h:outputText value="Address : "/>
-        <h:inputText id="dir" value="#{client.dir}"/>
-        <br/><br/>
-        <h:commandButton value="SUBMIT" action="index"/>
+        <h:outputLabel for="txtFN" value="First Name"/><br/><br/>
+        <h:inputText id="txtFN" value="#{tcservicefacade.client.firstName}"/><br/><br/>
+
+        <h:outputLabel for="txtLN" value="Last Name"/><br/><br/>
+        <h:inputText id="txtLN" value="#{tcservicefacade.client.lastName}"/><br/><br/>
+
+        <h:outputLabel for="txtDir" value="Address"/><br/><br/>
+        <h:inputText id="txtDir" value="#{tcservicefacade.client.dir}"/><br/><br/>
+
+        <h:commandButton value="Update" action="#{tcservicefacade.editClient}">
+            <f:param name="Fn" value="#{tcservicefacade.client.firstName}"/>
+            <f:param name="Ln" value="#{tcservicefacade.client.lastName}"/>
+            <f:param name="Dir" value="#{tcservicefacade.client.dir}"/>
+        </h:commandButton>
         <h:commandButton id="index" value="BACK" action="index"/>
     </h:form>
 </f:view>

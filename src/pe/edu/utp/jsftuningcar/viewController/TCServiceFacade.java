@@ -1,4 +1,6 @@
-package pe.edu.utp.jsftuningcar.models;
+package pe.edu.utp.jsftuningcar.viewController;
+
+import pe.edu.utp.jsftuningcar.models.*;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -52,8 +54,11 @@ public class TCServiceFacade {
         return clientsEntity;
     }
 
-    private Client  client = new Client();
-    //obtener param
+    //Edit and Add
+
+    private Client client = new Client();
+    private ServiceCar serviceCar = new ServiceCar();
+    //catch params Edit
     public Client getClientParam(){
         FacesContext fc = FacesContext.getCurrentInstance();
 
@@ -64,12 +69,34 @@ public class TCServiceFacade {
         client.setDir(param.get("selectClientToEditD"));
         return client;
     }
+    //catch params Add
+
+    public Client getAddClientServiceParam(){
+        FacesContext fc = FacesContext.getCurrentInstance();
+
+        Map<String,String> param= fc.getExternalContext().getRequestParameterMap();
+        getServiceCar().setFirstName(param.get("selectServiceCarToReserveClientF"));
+        getServiceCar().setLastName(param.get("selectServiceCarToReserveClientL"));
+        getServiceCar().setDir(param.get("selectServiceCarToReserveClientD"));
+        getServiceCar().setDesc(param.get("selectServiceCarToReserveClientDesc"));
+        getServiceCar().setPrice(Integer.parseInt(param.get("selectServiceCarToReserveClientP")));
+        getServiceCar().setDate(param.get("selectServiceCarToReserveClientDate"));
+        return getServiceCar();
+    }
+
 
     public Client getClient() {
         return client;
     }
     public void setClient(Client client) {
         this.client = client;
+    }
+    public ServiceCar getServiceCar() {
+        return serviceCar;
+    }
+
+    public void setServiceCar(ServiceCar serviceCar) {
+        this.serviceCar = serviceCar;
     }
 
 
@@ -117,4 +144,5 @@ public class TCServiceFacade {
     public int getClientsCount() { return getClientsEntity().getClients().size(); }
 
     public int getAcessoriesCount() { return getAccessoriesEntity().getAccessories().size(); }
+
 }

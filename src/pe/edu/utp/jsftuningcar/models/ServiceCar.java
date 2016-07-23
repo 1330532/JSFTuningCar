@@ -9,32 +9,32 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean(name = "servicecar")
 @SessionScoped
-public class ServiceCar {
-    private String id;
+public class ServiceCar extends Client{
+    private String idServ;
     private String desc;
     private int price;
     private String date;
-    private String idAccessory;
     private String idClient;
 
-    public ServiceCar(String id, String desc, int price, String date, String idAccessory, String idClient){
-        this.setId(id);
+    public ServiceCar(String id, String firstName,String lastName, String dir, String idServ, String desc, int price, String date){
+        super(id,firstName,lastName,dir);
+        this.setIdServ(idServ);
         this.setDesc(desc);
         this.setPrice(price);
         this.setDate(date);
-        this.setIdAccessory(idAccessory);
-        this.setIdClient(idClient);
+        this.setIdClient(id);
     }
 
     public ServiceCar(){
     }
 
-    public String getId() {
-        return id;
+
+    public String getIdServ() {
+        return idServ;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdServ(String idServ) {
+        this.idServ = idServ;
     }
 
     public String getDesc() {
@@ -59,14 +59,6 @@ public class ServiceCar {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getIdAccessory() {
-        return idAccessory;
-    }
-
-    public void setIdAccessory(String idAccessory) {
-        this.idAccessory = idAccessory;
     }
 
     public String getIdClient() {
