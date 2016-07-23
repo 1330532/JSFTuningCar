@@ -9,24 +9,32 @@
 </head>
 <body>
 <f:view>
-   <h:outputLabel value="Hello, what do you want to check?" style="text-align: center"/>
    <br/><br/>
-
-   <h1>Seleciona lo  que necesitas para tunear tu maquina !</h1>
+   <h1><b>How would you like to customize a car?</b></h1>
+   <br/><br/>
+   <h3>Come and personalize a car how you prefer. In Tuning Car Web, Everybody can have the car that they've dreamed of. And even better.</h3>
 
    <h:graphicImage value="/img/aros.jpg" width="300" height="300"/>
-   <h:graphicImage value="/img/lamparas2.jpg" width="300" height="300"/><br></br>
+   <h:graphicImage value="/img/lamparas2.jpg" width="300" height="300"/>
    <h:graphicImage value="/img/pedales.jpg" width="300" height="300" />
-   <h:graphicImage value="/img/sparco.JPG" width="300" height="300"/>
-   <br></br>
+   <h:graphicImage value="/img/sparco.JPG" width="300" height="300"/><br></br>
    <h:graphicImage value="/img/spoiler.jpg" width="300" height="300" />
-   <h:graphicImage value="/img/volante.jpg" width="300" height="300" /><br></br>
-   <h:graphicImage value="/img/jaguar_lana_560.jpg" width="300" height="300" />
+   <h:graphicImage value="/img/volante.jpg" width="300" height="300" />
+   <h:graphicImage value="/img/jaguar_lana_560.jpg" width="300" height="300" /><br></br>
    <h:form id="index">
-      <h:commandButton id="ListClients" value="List Clients" action="ListClients"/>
+      <br/><br/><br/><br/>
+      <h1><b>Would you like to register a reservation?</b></h1>
+      <br/><br/>
+      <h:commandButton id="ReserveClient" value="Register a Reservation" action="ReserveClient"/>
+      <br/><br/>
+      <h1><b>Would you like to check the reservation?</b></h1>
+      <br/><br/>
+      <h:commandButton id="ListClients" value="Check" action="ListClients"/>
+      <br/><br/>
+      <h1><b>Would you like to see what accessories we have?</b></h1>
       <br/><br/>
       <h:commandButton id="ListAccessories" value="List Accessories" action="ListAccessories"/>
-      <br/><br/>
+      <br/><br/><br/><br/>
       <b:outputLabel value="Welcome" style="text-align: center" />
    </h:form>
 </f:view>

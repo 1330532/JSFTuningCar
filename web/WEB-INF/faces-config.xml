@@ -7,6 +7,11 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
+            <from-action>#{tcservicefacade}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ReserveClient.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-action>#{tcservicefacade.clients}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>/ListClients.xhtml</to-view-id>
@@ -21,23 +26,21 @@
     <navigation-rule>
         <from-view-id>/ListClients.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{tcservicefacade}</from-action>
+            <from-action>#{tcservicefacade.editClient}</from-action>
             <from-outcome>success</from-outcome>
-            <to-view-id>/AddClient.xhtml</to-view-id>
+            <to-view-id>/EditClient.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-action>#{tcservicefacade}</from-action>
             <from-outcome>success</from-outcome>
-            <to-view-id>/EditClient.xhtml</to-view-id>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 
     <navigation-rule>
-        <from-view-id>/AddClient.xhtml</from-view-id>
+        <from-view-id>/ReserveClient.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{tcservicefacade.clients}</from-action>
-            <from-outcome>success</from-outcome>
-            <to-view-id>/ListClients.xhtml</to-view-id>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 
