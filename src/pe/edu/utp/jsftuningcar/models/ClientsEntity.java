@@ -19,7 +19,7 @@ public class ClientsEntity {
     }
 
     public List<Client> getClients(){
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM clients";
         List<Client> clients = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -28,10 +28,10 @@ public class ClientsEntity {
             if (rs == null) return null;
             while (rs.next()){
                 Client client = new Client();
-                client.setId(rs.getString("codcli"));
-                client.setLastName(rs.getString("nomcli"));
-                client.setFirstName(rs.getString("apecli"));
-                client.setDir(rs.getString("direcc"));
+                client.setId(rs.getString("client_id"));
+                client.setLastName(rs.getString("fname"));
+                client.setFirstName(rs.getString("lname"));
+                client.setDir(rs.getString("address"));
                 clients.add(client);
             }
             return clients;
@@ -47,7 +47,7 @@ public class ClientsEntity {
 
         try {
 
-            PreparedStatement stmt = getConnection().prepareStatement("update cliente set nomcli=? , apecli=? , direcc=? where codcli=?");
+            PreparedStatement stmt = getConnection().prepareStatement("update clients set fname=? , lname=? , address=? where client_id=?");
             stmt.setString(1,e.getFirstName());
             stmt.setString(2,e.getLastName());
             stmt.setString(3,e.getDir());

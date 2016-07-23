@@ -22,7 +22,7 @@ public class AccessoriesEntity {
     }
 
     public List<Accessory> getAccessories(){
-        String sql = "SELECT * FROM accesorio";
+        String sql = "SELECT * FROM accessory";
         List<Accessory> accessories = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -31,10 +31,10 @@ public class AccessoriesEntity {
             if (rs == null) return null;
             while (rs.next()){
                 Accessory accessory = new Accessory();
-                accessory.setId(rs.getString("codacc"));
-                accessory.setDesc(rs.getString("descripcion"));
-                accessory.setPrice(rs.getInt("precio"));
-                accessory.setCant(rs.getInt("cantidad"));
+                accessory.setId(rs.getString("accessory_id"));
+                accessory.setDesc(rs.getString("description_a"));
+                accessory.setPrice(rs.getInt("price_a"));
+                accessory.setCant(rs.getInt("quantity"));
                 accessories.add(accessory);
             }
             return accessories;

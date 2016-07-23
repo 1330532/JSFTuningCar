@@ -17,10 +17,10 @@ public class Client {
     private String dir;
     private List<Car> cars;
 
-    public Client(String id, String lastName, String firstName, String dir){
+    public Client(String id, String firstName,String lastName, String dir){
         this.setId(id);
-        this.setLastName(lastName);
         this.setFirstName(firstName);
+        this.setLastName(lastName);
         this.setDir(dir);
     }
 

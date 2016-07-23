@@ -22,7 +22,7 @@ public class CarsEntity {
     }
 
     public List<Car> getCars(){
-        String sql = "SELECT * FROM auto";
+        String sql = "SELECT * FROM car";
         List<Car> cars = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -31,11 +31,11 @@ public class CarsEntity {
             if (rs == null) return null;
             while (rs.next()){
                 Car car = new Car();
-                car.setId(rs.getString("codauto"));
-                car.setBrand(rs.getString("marca"));
-                car.setModel(rs.getString("modelo"));
+                car.setId(rs.getString("car_id"));
+                car.setBrand(rs.getString("brand"));
+                car.setModel(rs.getString("model"));
                 car.setColor(rs.getString("color"));
-                car.setIdClient(rs.getString("codcli")); //duda
+                car.setIdClient(rs.getString("client_id")); //duda
             }
             return cars;
         } catch (SQLException e) {
@@ -45,7 +45,7 @@ public class CarsEntity {
     }
 
     public List<Car> getCarsByClient(Client client){
-        String sql = "SELECT * FROM auto WHERE codcli = "+ client.getId();
+        String sql = "SELECT * FROM car WHERE client_id = "+ client.getId();
         List<Car> cars = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -54,11 +54,11 @@ public class CarsEntity {
             if (rs == null) return null;
             while (rs.next()){
                 Car car = new Car();
-                car.setId(rs.getString("codauto"));
-                car.setBrand(rs.getString("marca"));
-                car.setModel(rs.getString("modelo"));
+                car.setId(rs.getString("car_id"));
+                car.setBrand(rs.getString("brand"));
+                car.setModel(rs.getString("model"));
                 car.setColor(rs.getString("color"));
-                car.setIdClient(rs.getString("codcli")); //duda
+                car.setIdClient(rs.getString("client_id")); //duda
             }
             return cars;
         } catch (SQLException e) {

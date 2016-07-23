@@ -22,7 +22,7 @@ public class ServiceCarsEntity {
     }
 
     public List<ServiceCar> getServiceCarsList(){
-        String sql = "SELECT * FROM servicio";
+        String sql = "SELECT * FROM service";
         List<ServiceCar> serviceCars = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -31,12 +31,12 @@ public class ServiceCarsEntity {
             if (rs == null) return null;
             while (rs.next()){
                 ServiceCar serviceCar = new ServiceCar();
-                serviceCar.setId(rs.getString("codserv"));
-                serviceCar.setDesc(rs.getString("descripcion"));
-                serviceCar.setPrice(rs.getInt("precio"));
-                serviceCar.setDate(rs.getString("fecha"));
-                serviceCar.setIdAccessory(rs.getString("codacc")); //duda
-                serviceCar.setIdClient(rs.getString("codcli"));  //duda
+                serviceCar.setId(rs.getString("service_id"));
+                serviceCar.setDesc(rs.getString("descripcion_s"));
+                serviceCar.setPrice(rs.getInt("price_s"));
+                serviceCar.setDate(rs.getString("date_s"));
+                serviceCar.setIdAccessory(rs.getString("accessory_id")); //duda
+                serviceCar.setIdClient(rs.getString("client_id"));  //duda
                 serviceCars.add(serviceCar);
             }
             return serviceCars;
