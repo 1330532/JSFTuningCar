@@ -52,7 +52,14 @@ public class TCServiceFacade {
         return clientsEntity;
     }
 
+    private CarsEntity getCarsEntity(){
+        CarsEntity carsEntity = new CarsEntity();
+        carsEntity.setConnection(connection);
+        return carsEntity;
+    }
+
     private Client  client = new Client();
+    private Car  car = new Car();
     //obtener param
     public Client getClientParam(){
         FacesContext fc = FacesContext.getCurrentInstance();
@@ -72,6 +79,12 @@ public class TCServiceFacade {
         this.client = client;
     }
 
+    public Car getCar() {
+        return car;
+    }
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     //edit client
 
@@ -112,6 +125,26 @@ public class TCServiceFacade {
         return getClientsEntity().getClients();
     }
 
+    public Car addCars(){
+        Car car = new Car();
+        Client client = new Client();
+        FacesContext fc2 = FacesContext.getCurrentInstance();
+        Map<String,String> param= fc2.getExternalContext().getRequestParameterMap();
+        client.setId(param.get("Id"));
+
+        client.setId(getClient().getId());
+
+        car = getCarsEntity().getCarByIdClient(client);
+
+        try {
+            getClients();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCar/ListClients");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return car;
+
+    }
     //Cantidad de clientes y accesorios
 
     public int getClientsCount() { return getClientsEntity().getClients().size(); }

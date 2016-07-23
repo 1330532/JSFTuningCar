@@ -43,6 +43,14 @@
                 </h:commandLink>
             </h:form>
         </h:column>
+        <h:column>
+            <f:facet name="Header"> Actions </f:facet>
+            <h:form >
+                <h:commandLink value="Car" action="CarByClient" actionListener="#{tcservicefacade.getClientParam}">
+                    <f:param name="selectClientToEditId" value="#{client.id}"/>
+                </h:commandLink>
+            </h:form>
+        </h:column>
     </h:dataTable>
 </f:view>
 </html>
