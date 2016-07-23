@@ -47,8 +47,6 @@
     <navigation-rule>
         <from-view-id>/EditClient.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{tcservicefacade.editClient}</from-action>
-            <from-outcome>success</from-outcome>
             <to-view-id>/ListClients.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

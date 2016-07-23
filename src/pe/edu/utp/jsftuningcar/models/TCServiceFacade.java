@@ -73,7 +73,7 @@ public class TCServiceFacade {
     }
 
 
-    //editar cliente
+    //edit client
 
     public void editClient(){
 
@@ -81,21 +81,21 @@ public class TCServiceFacade {
         FacesContext fc1 = FacesContext.getCurrentInstance();
 
         Map<String,String> param= fc1.getExternalContext().getRequestParameterMap();
-        cli.setId(param.get("Id"));
         cli.setFirstName(param.get("Fn"));
         cli.setLastName(param.get("Ln"));
         cli.setDir(param.get("Dir"));
+        cli.setId(param.get("Id"));
 
-        cli.setId(getClient().getId());
         cli.setFirstName(getClient().getFirstName());
         cli.setLastName(getClient().getLastName());
         cli.setDir(getClient().getDir());
+        cli.setId(getClient().getId());
 
         getClientsEntity().editClient(cli);
 
         try {
             getClients();
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCar/ListClients");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCarWeb/ListClients.xhtml");
         } catch (IOException e) {
             e.printStackTrace();
         }
