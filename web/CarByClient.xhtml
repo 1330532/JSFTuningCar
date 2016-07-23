@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form id="CarByClient">
+        <h:outputLabel value="List Car" />
+        <br/><br/>
+
+        <h:outputLabel for="txtId" value="Client Id"/><br/><br/>
+        <h:outputLabel id="txtId" value="#{tcservicefacade.client.id}"/><br/><br/>
+
+        <h:commandButton value="Ver" action="#{tcservicefacade.addCars}">
+            <f:param name="Id" value="#{tcservicefacade.client.id}"/>
+        </h:commandButton>
+        <br/><br/>
+        <h:outputText value="Brand #{tcservicefacade.car.brand} "/>
+        <br/><br/>
+        <h:outputText value="Model #{tcservicefacade.car.model} "/>
+        <br/><br/>
+        <h:outputText value="Color #{tcservicefacade.car.color} "/>
+        <br/><br/>
+        <h:commandButton id="ListClients" value="BACK" action="ListClients"/>
+    </h:form>
+</f:view>
+</html>

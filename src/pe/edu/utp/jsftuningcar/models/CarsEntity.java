@@ -44,26 +44,26 @@ public class CarsEntity {
         }
     }
 
-    public List<Car> getCarsByClient(Client client){
-        String sql = "SELECT * FROM car WHERE client_id = "+ client.getId();
-        List<Car> cars = new ArrayList<>();
+    public Car getCarByIdClient(Client client) {
+        Car car = null;
+        String sql = "SELECT * FROM car WHERE client_id = '"+client.getId()+"'";
         if (connection == null){ return null; }
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs == null) return null;
-            while (rs.next()){
-                Car car = new Car();
+            if (rs.next()){
+                car = new Car();
                 car.setId(rs.getString("car_id"));
                 car.setBrand(rs.getString("brand"));
                 car.setModel(rs.getString("model"));
                 car.setColor(rs.getString("color"));
-                car.setIdClient(rs.getString("client_id")); //duda
+                car.setIdClient(rs.getString("client_id"));
+                return car;
             }
-            return cars;
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
     }
 }
