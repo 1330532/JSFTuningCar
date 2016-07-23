@@ -44,10 +44,18 @@
             </h:form>
         </h:column>
         <h:column>
-            <f:facet name="Header"> Actions </f:facet>
+            <f:facet name="Header"> More Actions </f:facet>
             <h:form >
                 <h:commandLink value="Car" action="CarByClient" actionListener="#{tcservicefacade.getClientParam}">
                     <f:param name="selectClientToEditId" value="#{client.id}"/>
+                </h:commandLink>
+            </h:form>
+        </h:column>
+        <h:column>
+            <f:facet name="Header"> More Actions </f:facet>
+            <h:form >
+                <h:commandLink value="Delete" action="#{tcservicefacade.deleteReservClient}">
+                    <f:param name="Id" value="#{client.id}"/>
                 </h:commandLink>
             </h:form>
         </h:column>

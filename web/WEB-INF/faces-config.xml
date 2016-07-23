@@ -7,7 +7,7 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{tcservicefacade}</from-action>
+            <from-action>#{tcservicefacade.addReservClient}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>/ReserveClient.xhtml</to-view-id>
         </navigation-case>

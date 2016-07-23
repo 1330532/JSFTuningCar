@@ -54,6 +54,12 @@ public class TCServiceFacade {
         return clientsEntity;
     }
 
+    private ServiceCarsEntity getServiceCarsEntity(){
+        ServiceCarsEntity serviceCarsEntity = new ServiceCarsEntity();
+        serviceCarsEntity.setConnection(connection);
+        return serviceCarsEntity;
+    }
+
     //Edit and Add
 
     private Client client = new Client();
@@ -69,9 +75,10 @@ public class TCServiceFacade {
         client.setDir(param.get("selectClientToEditD"));
         return client;
     }
+
     //catch params Add
 
-    public Client getAddClientServiceParam(){
+    /*public ServiceCar getAddClientServiceParam(){
         FacesContext fc = FacesContext.getCurrentInstance();
 
         Map<String,String> param= fc.getExternalContext().getRequestParameterMap();
@@ -82,7 +89,7 @@ public class TCServiceFacade {
         getServiceCar().setPrice(Integer.parseInt(param.get("selectServiceCarToReserveClientP")));
         getServiceCar().setDate(param.get("selectServiceCarToReserveClientDate"));
         return getServiceCar();
-    }
+    }*/
 
 
     public Client getClient() {
@@ -94,10 +101,7 @@ public class TCServiceFacade {
     public ServiceCar getServiceCar() {
         return serviceCar;
     }
-
-    public void setServiceCar(ServiceCar serviceCar) {
-        this.serviceCar = serviceCar;
-    }
+    public void setServiceCar(ServiceCar serviceCar) { this.serviceCar = serviceCar; }
 
 
     //edit client
@@ -129,6 +133,64 @@ public class TCServiceFacade {
         return;
     }
 
+    //Add Reservation
+
+    public void addReservClient(){
+
+        Client cli = new Client();
+        ServiceCar ser = new ServiceCar();
+        FacesContext fc1 = FacesContext.getCurrentInstance();
+
+        Map<String,String> param= fc1.getExternalContext().getRequestParameterMap();
+        cli.setFirstName(param.get("Fn"));
+        cli.setLastName(param.get("Ln"));
+        cli.setDir(param.get("Dir"));
+        ser.setDesc(param.get("Desc"));
+        ser.setPrice(Integer.parseInt(param.get("Price")));
+        ser.setDate(param.get("Date"));
+
+        cli.setFirstName(getServiceCar().getFirstName());
+        cli.setLastName(getServiceCar().getLastName());
+        cli.setDir(getServiceCar().getDir());
+        ser.setDesc(getServiceCar().getDesc());
+        ser.setPrice(getServiceCar().getPrice());
+        ser.setDate(getServiceCar().getDate());
+
+        getServiceCarsEntity().addClient(cli);
+        getServiceCarsEntity().addService(ser);
+
+        try {
+            getserviceCars();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCarWeb/index.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Detele Reservation
+
+    public void deleteReservClient(){
+
+        Client cli = new Client();
+        ServiceCar ser = new ServiceCar();
+        FacesContext fc1 = FacesContext.getCurrentInstance();
+
+        Map<String,String> param= fc1.getExternalContext().getRequestParameterMap();
+        cli.setId(param.get("Id"));
+        ser.setIdClient(getClient().getId());
+
+        getServiceCarsEntity().deleteClient(cli);
+        getServiceCarsEntity().deleteService(ser);
+
+        try {
+            getserviceCars();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCarWeb/ListClients.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return;
+    }
+
     //List about data from tables
 
     public List<Accessory> getAccesories(){
@@ -138,6 +200,8 @@ public class TCServiceFacade {
     public List<Client> getClients(){
         return getClientsEntity().getClients();
     }
+
+    public List<ServiceCar> getserviceCars(){ return getServiceCarsEntity().getServiceCarsList(); }
 
     //Cantidad de clientes y accesorios
 

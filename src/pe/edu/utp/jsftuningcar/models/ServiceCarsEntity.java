@@ -19,7 +19,7 @@ public class ServiceCarsEntity {
     }
 
     public List<ServiceCar> getServiceCarsList(){
-        String sql = "SELECT * FROM service";
+        String sql = "SELECT * FROM service AND clients";
         List<ServiceCar> serviceCars = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -28,7 +28,11 @@ public class ServiceCarsEntity {
             if (rs == null) return null;
             while (rs.next()){
                 ServiceCar serviceCar = new ServiceCar();
-                serviceCar.setId(rs.getString("service_id"));
+                serviceCar.setId(rs.getString("client_id"));
+                serviceCar.setLastName(rs.getString("fname"));
+                serviceCar.setFirstName(rs.getString("lname"));
+                serviceCar.setDir(rs.getString("address"));
+                serviceCar.setIdServ(rs.getString("service_id"));
                 serviceCar.setDesc(rs.getString("descripcion_s"));
                 serviceCar.setPrice(rs.getInt("price_s"));
                 serviceCar.setDate(rs.getString("date_s"));
@@ -42,32 +46,28 @@ public class ServiceCarsEntity {
         }
     }
 
-    //Add CLient
+    //Generate code for Add CLient
     public int generacode(){
         int num = (int) (Math.random()*1000+110);
         return num;
     }
 
-    public int addClientService(ServiceCar e){
+    //add client
+
+    public int addClient(Client e){
         int send=0;
         int c=generacode();
         String id = "C0"+Integer.toString(c);
-        String sid = "S0"+Integer.toString(c);
 
         try {
 
             PreparedStatement stmt = getConnection().prepareStatement(
-                    "INSERT INTO clients (client_id, fname, lname, address) VALUES (?, ?, ?, ?);"+
-                            " INSERT INTO service (service_id, descripcion_s, price_s, date_s, client_id) VALUES (?,?,?,?,?);");
+                    "INSERT INTO clients (client_id, fname, lname, address) VALUES (?, ?, ?, ?)");
+
             stmt.setString(1,id);
             stmt.setString(2,e.getFirstName());
             stmt.setString(3,e.getLastName());
             stmt.setString(4,e.getDir());
-            stmt.setString(5,sid);
-            stmt.setString(6,e.getDesc());
-            stmt.setInt(7,e.getPrice());
-            stmt.setString(8,e.getDate());
-            stmt.setString(9,id);
 
             int i = stmt.executeUpdate();
             send=i;
@@ -79,6 +79,78 @@ public class ServiceCarsEntity {
         }
         return send;
 
+    }
+
+    //add service dependent - Client
+    public int addService(ServiceCar e){
+        int send=0;
+        int c=generacode();
+        String sid = "S0"+Integer.toString(c);
+        String id = "C0"+Integer.toString(c);
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement(
+                    " INSERT INTO service (service_id, descripcion_s, price_s, date_s, client_id) VALUES (?,?,?,?,?)");
+
+            stmt.setString(1,sid);
+            stmt.setString(2,e.getDesc());
+            stmt.setInt(3,e.getPrice());
+            stmt.setString(4,e.getDate());
+            stmt.setString(5,id);
+
+            int i = stmt.executeUpdate();
+            send=i;
+
+        }catch (SQLException ec){
+            ec.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return send;
+
+    }
+
+    //Delete Reservation
+
+    public int deleteClient(Client e){
+        int send=0;
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement(
+                    "DELETE FROM clients WHERE client_id = ?");
+            stmt.setString(1,e.getId());
+
+            int i = stmt.executeUpdate();
+            send=i;
+
+        }catch (SQLException ec){
+            ec.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return send;
+    }
+
+    public int deleteService(ServiceCar e){
+        int send=0;
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement(
+                    "DELETE FROM service WHERE client_id = ?");
+            stmt.setString(1,e.getId());
+
+            int i = stmt.executeUpdate();
+            send=i;
+
+        }catch (SQLException ec){
+            ec.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return send;
     }
 
 }

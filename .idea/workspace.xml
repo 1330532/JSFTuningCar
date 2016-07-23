@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a161a40-e278-46ba-8db5-bd9244032100" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/TCServiceFacade.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCar.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ListClients.xhtml" afterPath="$PROJECT_DIR$/web/ListClients.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ReserveClient.xhtml" afterPath="$PROJECT_DIR$/web/ReserveClient.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,21 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <file leaf-file-name="TCServiceFacade.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReserveClient.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ReserveClient.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="111">
+              <caret line="181" column="49" selection-start-line="181" selection-start-column="49" selection-end-line="181" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -98,53 +87,9 @@
       <file leaf-file-name="ListClients.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/ListClients.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="196">
+              <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TCServiceFacade.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-              <folding>
-                <element signature="e#3082#3083#0" expanded="true" />
-                <element signature="e#3115#3116#0" expanded="true" />
-                <element signature="e#3171#3172#0" expanded="true" />
-                <element signature="e#3215#3216#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceCarsEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-              <folding>
-                <marker date="1469277318800" expanded="true" signature="472:493" ph="SELECT * FRO... service" />
-                <marker date="1469277318800" expanded="true" signature="1799:1873" ph="INSERT INTO clients... " />
-                <marker date="1469277318800" expanded="true" signature="1805:1873" ph="update clien... " />
-                <marker date="1469277318800" expanded="true" signature="1907:1982" ph="INSERT INTO service... " />
-                <marker date="1469277318800" expanded="true" signature="1907:2001" ph="INSERT INTO service... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientsEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ClientsEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="49" column="119" selection-start-line="49" selection-start-column="90" selection-end-line="49" selection-end-column="119" />
-              <folding>
-                <marker date="1469272227984" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
-                <marker date="1469272227984" expanded="true" signature="1404:1470" ph="update clien... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -175,19 +120,19 @@
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Accessory.java" />
         <option value="$PROJECT_DIR$/web/ListAccesories.xhtml" />
         <option value="$PROJECT_DIR$/web/AddClient.xhtml" />
-        <option value="$PROJECT_DIR$/web/ListClients.xhtml" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/CarsEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/AccessoriesEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ClientsEntity.java" />
         <option value="$PROJECT_DIR$/web/EditClient.xhtml" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/TCServiceFacade.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/web/ListAccessories.xhtml" />
         <option value="$PROJECT_DIR$/web/index.xhtml" />
-        <option value="$PROJECT_DIR$/web/ReserveClient.xhtml" />
-        <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCar.java" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java" />
+        <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCar.java" />
+        <option value="$PROJECT_DIR$/web/ReserveClient.xhtml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java" />
+        <option value="$PROJECT_DIR$/web/ListClients.xhtml" />
         <option value="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java" />
       </list>
     </option>
@@ -243,6 +188,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,9 +290,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -982,6 +927,7 @@
       <workItem from="1469270417749" duration="270000" />
       <workItem from="1469270864755" duration="330000" />
       <workItem from="1469272236754" duration="6253000" />
+      <workItem from="1469279007680" duration="5877000" />
     </task>
     <task id="LOCAL-00001" summary="creando interfaces y más entidades">
       <created>1469097844944</created>
@@ -1043,7 +989,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37285000" />
+    <option name="totallyTimeSpent" value="43162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -1058,17 +1004,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34300342" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34129694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15326253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13353565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13277693" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1123,12 +1069,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3215#3216#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,8 +1078,8 @@
         <state relative-caret-position="799">
           <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
           <folding>
-            <marker date="1469272227984" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
-            <marker date="1469272227984" expanded="true" signature="1404:1470" ph="update clien... " />
+            <marker date="1469278998564" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
+            <marker date="1469278998564" expanded="true" signature="1404:1470" ph="update clien... " />
           </folding>
         </state>
       </provider>
@@ -1193,12 +1134,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
           <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3215#3216#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,8 +1143,8 @@
         <state relative-caret-position="799">
           <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
           <folding>
-            <marker date="1469272227984" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
-            <marker date="1469272227984" expanded="true" signature="1404:1470" ph="update clien... " />
+            <marker date="1469278998564" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
+            <marker date="1469278998564" expanded="true" signature="1404:1470" ph="update clien... " />
           </folding>
         </state>
       </provider>
@@ -1304,12 +1240,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3215#3216#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,8 +1249,8 @@
         <state relative-caret-position="357">
           <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
-            <marker date="1469272227984" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
-            <marker date="1469272227984" expanded="true" signature="1404:1470" ph="update clien... " />
+            <marker date="1469278998564" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
+            <marker date="1469278998564" expanded="true" signature="1404:1470" ph="update clien... " />
           </folding>
         </state>
       </provider>
@@ -1359,8 +1290,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1469272227984" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
-            <marker date="1469272227984" expanded="true" signature="1404:1470" ph="update clien... " />
+            <marker date="1469278998564" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
+            <marker date="1469278998564" expanded="true" signature="1404:1470" ph="update clien... " />
           </folding>
         </state>
       </provider>
@@ -1439,70 +1370,10 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e4afdc12-9ca5-4f01-93c8-9084d5532931/console.sql" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/ListAccessories.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ClientsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="49" column="119" selection-start-line="49" selection-start-column="90" selection-end-line="49" selection-end-column="119" />
-          <folding>
-            <marker date="1469272227984" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
-            <marker date="1469272227984" expanded="true" signature="1404:1470" ph="update clien... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-          <folding>
-            <marker date="1469277318800" expanded="true" signature="472:493" ph="SELECT * FRO... service" />
-            <marker date="1469277318800" expanded="true" signature="1799:1873" ph="INSERT INTO clients... " />
-            <marker date="1469277318800" expanded="true" signature="1805:1873" ph="update clien... " />
-            <marker date="1469277318800" expanded="true" signature="1907:1982" ph="INSERT INTO service... " />
-            <marker date="1469277318800" expanded="true" signature="1907:2001" ph="INSERT INTO service... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/ListClients.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1515,32 +1386,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ReserveClient.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="246">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1342#1343#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="0">
           <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ReserveClient.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ClientsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
+          <folding>
+            <marker date="1469278998564" expanded="true" signature="456:477" ph="SELECT * FRO... clients" />
+            <marker date="1469278998564" expanded="true" signature="1404:1470" ph="update clien... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="141" column="40" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+          <folding>
+            <marker date="1469283292975" expanded="true" signature="472:505" ph="SELECT * FRO... service" />
+            <marker date="1469283292975" expanded="true" signature="2041:2115" ph="INSERT INTO clients... " />
+            <marker date="1469283292975" expanded="true" signature="2041:2117" ph="INSERT INTO clients... " />
+            <marker date="1469283292975" expanded="true" signature="2855:2949" ph="INSERT INTO service... " />
+            <marker date="1469283292975" expanded="true" signature="3579:3618" ph="DELETE FROM " />
+            <marker date="1469283292975" expanded="true" signature="4070:4109" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-484">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ListClients.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/viewController/TCServiceFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-          <folding>
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3215#3216#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="111">
+          <caret line="181" column="49" selection-start-line="181" selection-start-column="49" selection-end-line="181" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -9,19 +9,31 @@
     <h:form id="AddClient">
         <h:outputLabel value="Add New Client" />
         <br/><br/>
+        <h:outputLabel for="txtDate" value="Date"/><br/><br/>
+        <h:inputText id="txtDate" value="#{tcservicefacade.serviceCar.date}"/><br/><br/>
+
         <h:outputLabel for="txtFN" value="First Name"/><br/><br/>
-        <h:inputText id="txtFN" value="#{tcservicefacade.client.firstName}"/><br/><br/>
+        <h:inputText id="txtFN" value="#{tcservicefacade.serviceCar.firstName}"/><br/><br/>
 
         <h:outputLabel for="txtLN" value="Last Name"/><br/><br/>
-        <h:inputText id="txtLN" value="#{tcservicefacade.client.lastName}"/><br/><br/>
+        <h:inputText id="txtLN" value="#{tcservicefacade.serviceCar.lastName}"/><br/><br/>
 
         <h:outputLabel for="txtDir" value="Address"/><br/><br/>
-        <h:inputText id="txtDir" value="#{tcservicefacade.client.dir}"/><br/><br/>
+        <h:inputText id="txtDir" value="#{tcservicefacade.serviceCar.dir}"/><br/><br/>
 
-        <h:commandButton value="Update" action="#{tcservicefacade.editClient}">
-            <f:param name="Fn" value="#{tcservicefacade.client.firstName}"/>
-            <f:param name="Ln" value="#{tcservicefacade.client.lastName}"/>
-            <f:param name="Dir" value="#{tcservicefacade.client.dir}"/>
+        <h:outputLabel for="txtPrice" value="Price Aprox."/><br/><br/>
+        <h:inputText id="txtPrice" value="#{tcservicefacade.serviceCar.price}"/><br/><br/>
+
+        <h:outputLabel for="txtDesc" value="Description"/><br/><br/>
+        <h:inputTextarea id="txtDesc" value="#{tcservicefacade.serviceCar.desc}"/><br/><br/>
+
+        <h:commandButton value="Update" action="#{tcservicefacade.addReservClient}">
+            <f:param name="Fn" value="#{tcservicefacade.serviceCar.firstName}"/>
+            <f:param name="Ln" value="#{tcservicefacade.serviceCar.lastName}"/>
+            <f:param name="Dir" value="#{tcservicefacade.serviceCar.dir}"/>
+            <f:param name="Desc" value="#{tcservicefacade.serviceCar.desc}"/>
+            <f:param name="Price" value="#{tcservicefacade.serviceCar.price}"/>
+            <f:param name="Date" value="#{tcservicefacade.serviceCar.date}"/>
         </h:commandButton>
         <h:commandButton id="index" value="BACK" action="index"/>
     </h:form>
