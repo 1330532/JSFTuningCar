@@ -946,7 +946,7 @@
       <workItem from="1469241169289" duration="1259000" />
       <workItem from="1469242480542" duration="255000" />
       <workItem from="1469243943876" duration="426000" />
-      <workItem from="1469249326744" duration="2633000" />
+      <workItem from="1469249326744" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="creando interfaces y más entidades">
       <created>1469097844944</created>
@@ -997,11 +997,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469256630692</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Edit client new database">
+      <created>1469256653997</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1469256653997</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23301000" />
+    <option name="totallyTimeSpent" value="23310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
