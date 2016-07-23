@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a161a40-e278-46ba-8db5-bd9244032100" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/AccessoriesEntity.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/AccessoriesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/CarsEntity.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/CarsEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ClientsEntity.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ClientsEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java" afterPath="$PROJECT_DIR$/src/pe/edu/utp/jsftuningcar/models/ServiceCarsEntity.java" />
-    </list>
+    <list default="true" id="1a161a40-e278-46ba-8db5-bd9244032100" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -953,7 +946,7 @@
       <workItem from="1469241169289" duration="1259000" />
       <workItem from="1469242480542" duration="255000" />
       <workItem from="1469243943876" duration="426000" />
-      <workItem from="1469249326744" duration="2600000" />
+      <workItem from="1469249326744" duration="2633000" />
     </task>
     <task id="LOCAL-00001" summary="creando interfaces y más entidades">
       <created>1469097844944</created>
@@ -997,11 +990,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469249362425</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Edit client new database">
+      <created>1469256630692</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1469256630692</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23268000" />
+    <option name="totallyTimeSpent" value="23301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1057,7 +1057,8 @@
     <MESSAGE value="Editar Clientes - Faces Config" />
     <MESSAGE value="imagenes en index&#10;imagenes en lis alumnos" />
     <MESSAGE value="Edit client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit client" />
+    <MESSAGE value="Edit client new database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit client new database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
