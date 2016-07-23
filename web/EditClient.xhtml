@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form id="EditClient">
+        <h:outputLabel value="Edit Client" />
+        <br/><br/>
+
+        <h:outputLabel for="txtId" value="Client Id"/><br/><br/>
+        <h:outputLabel id="txtId" value="#{tcservicefacade.client.id}"/><br/><br/>
+
+        <h:outputLabel for="txtFN" value="First Name"/><br/><br/>
+        <h:inputText id="txtFN" value="#{tcservicefacade.client.firstName}"/><br/><br/>
+
+        <h:outputLabel for="txtLN" value="Last Name"/><br/><br/>
+        <h:inputText id="txtLN" value="#{tcservicefacade.client.lastName}"/><br/><br/>
+
+        <h:outputLabel for="txtDir" value="Address"/><br/><br/>
+        <h:inputText id="txtDir" value="#{tcservicefacade.client.dir}"/><br/><br/>
+
+        <h:commandButton value="Update" action="#{tcservicefacade.editClient}">
+            <f:param name="Id" value="#{tcservicefacade.client.id}"/>
+            <f:param name="Fn" value="#{tcservicefacade.client.firstName}"/>
+            <f:param name="Ln" value="#{tcservicefacade.client.lastName}"/>
+            <f:param name="Dir" value="#{tcservicefacade.client.dir}"/>
+        </h:commandButton>
+        <h:commandButton id="ListClients" value="BACK" action="ListClients"/>
+    </h:form>
+</f:view>
+</html>

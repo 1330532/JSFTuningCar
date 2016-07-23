@@ -1,9 +1,6 @@
 package pe.edu.utp.jsftuningcar.models;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,4 +40,28 @@ public class ClientsEntity {
             return null;
         }
     }
+
+    //Editar Clientes
+    public int editClient(Client e){
+        int send=0;
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement("update cliente set nomcli=? , apecli=? , direcc=? where codcli=?");
+            stmt.setString(1,e.getFirstName());
+            stmt.setString(2,e.getLastName());
+            stmt.setString(3,e.getDir());
+            stmt.setString(4,e.getId());
+
+            int i = stmt.executeUpdate();
+            send=i;
+
+        }catch (SQLException ec){
+            ec.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return send;
+    }
+
 }
