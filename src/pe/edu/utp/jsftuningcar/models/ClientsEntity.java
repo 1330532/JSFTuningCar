@@ -41,7 +41,10 @@ public class ClientsEntity {
         }
     }
 
-    //Edit Clients
+
+
+    //editClient
+
     public int editClient(Client e){
         int send=0;
 

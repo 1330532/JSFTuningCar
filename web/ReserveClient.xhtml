@@ -20,6 +20,15 @@
         <h:outputLabel for="txtLN" value="Last Name"/><br/><br/>
         <h:inputText id="txtLN" value="#{tcservicefacade.serviceCar.lastName}"/><br/><br/>
 
+        <h:outputLabel for="txtBrand" value="Brand Car"/><br/><br/>
+        <h:inputText id="txtBrand" value="#{tcservicefacade.serviceCar.brand}"/><br/><br/>
+
+        <h:outputLabel for="txtModel" value="Model Car"/><br/><br/>
+        <h:inputText id="txtModel" value="#{tcservicefacade.serviceCar.model}"/><br/><br/>
+
+        <h:outputLabel for="txtColor" value="Color Car"/><br/><br/>
+        <h:inputText id="txtColor" value="#{tcservicefacade.serviceCar.color}"/><br/><br/>
+
         <h:outputLabel for="txtDir" value="Address"/><br/><br/>
         <h:inputText id="txtDir" value="#{tcservicefacade.serviceCar.dir}"/><br/><br/>
 
@@ -27,12 +36,15 @@
         <h:inputText id="txtPrice" value="#{tcservicefacade.serviceCar.price}"/><br/><br/>
 
         <h:outputLabel for="txtDesc" value="Description"/><br/><br/>
-        <h:inputTextarea id="txtDesc" value="#{tcservicefacade.serviceCar.desc}"/><br/><br/>
+        <h:inputTextarea id="txtDesc" value="#{tcservicefacade.serviceCar.desc}" rows="4" cols="20"/><br/><br/>
 
         <h:commandButton value="Update" action="#{tcservicefacade.addReservClient}">
             <f:param name="Fn" value="#{tcservicefacade.serviceCar.firstName}"/>
             <f:param name="Ln" value="#{tcservicefacade.serviceCar.lastName}"/>
             <f:param name="Dir" value="#{tcservicefacade.serviceCar.dir}"/>
+            <f:param name="Br" value="#{tcservicefacade.serviceCar.brand}"/>
+            <f:param name="Mo" value="#{tcservicefacade.serviceCar.model}"/>
+            <f:param name="Co" value="#{tcservicefacade.serviceCar.color}"/>
             <f:param name="Desc" value="#{tcservicefacade.serviceCar.desc}"/>
             <f:param name="Price" value="#{tcservicefacade.serviceCar.price}"/>
             <f:param name="Date" value="#{tcservicefacade.serviceCar.date}"/>

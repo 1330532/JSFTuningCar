@@ -19,7 +19,7 @@ public class ServiceCarsEntity {
     }
 
     public List<ServiceCar> getServiceCarsList(){
-        String sql = "SELECT * FROM service AND clients";
+        String sql = "SELECT * FROM service";
         List<ServiceCar> serviceCars = new ArrayList<>();
         if (connection == null){ return null; }
         try {
@@ -28,10 +28,6 @@ public class ServiceCarsEntity {
             if (rs == null) return null;
             while (rs.next()){
                 ServiceCar serviceCar = new ServiceCar();
-                serviceCar.setId(rs.getString("client_id"));
-                serviceCar.setLastName(rs.getString("fname"));
-                serviceCar.setFirstName(rs.getString("lname"));
-                serviceCar.setDir(rs.getString("address"));
                 serviceCar.setIdServ(rs.getString("service_id"));
                 serviceCar.setDesc(rs.getString("descripcion_s"));
                 serviceCar.setPrice(rs.getInt("price_s"));
@@ -80,8 +76,38 @@ public class ServiceCarsEntity {
         return send;
 
     }
+    //add car
 
-    //add service dependent - Client
+    public int addCar(Car e){
+        int send=0;
+        int c=generacode();
+        String cid = "A0"+Integer.toString(c);
+        String id = "C0"+Integer.toString(c);
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement(
+                    " INSERT INTO car (car_id, brand, model, color, client_id) VALUES (?,?,?,?,?)");
+
+            stmt.setString(1,cid);
+            stmt.setString(2,e.getBrand());
+            stmt.setString(3,e.getModel());
+            stmt.setString(4,e.getColor());
+            stmt.setString(5,id);
+
+            int i = stmt.executeUpdate();
+            send=i;
+
+        }catch (SQLException ec){
+            ec.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return send;
+
+    }
+
+    //add service dependent - Client and car
     public int addService(ServiceCar e){
         int send=0;
         int c=generacode();
@@ -133,6 +159,28 @@ public class ServiceCarsEntity {
         return send;
     }
 
+    //delete Car
+    public int deleteCar(Car e){
+        int send=0;
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement(
+                    "DELETE FROM car WHERE client_id = ?");
+            stmt.setString(1,e.getId());
+
+            int i = stmt.executeUpdate();
+            send=i;
+
+        }catch (SQLException ec){
+            ec.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return send;
+    }
+
+    //delete Service
     public int deleteService(ServiceCar e){
         int send=0;
 
@@ -151,6 +199,37 @@ public class ServiceCarsEntity {
             ex.printStackTrace();
         }
         return send;
+    }
+
+    //getService
+    public List<ServiceCar> getServiceClient(){
+        ServiceCar serviceCar=null;
+        String sql = "select * from clients "+
+                "inner join service on  clients.client_id=service.client_id "+
+                " inner join car on clients.client_id=car.client_id WHERE cliente_id=";
+        List<ServiceCar> serviceCars = new ArrayList<>();
+        if (connection == null){ return null; }
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs == null) return null;
+            while (rs.next()){
+                serviceCar = new ServiceCar();
+                serviceCar.setId(rs.getString("client_id"));
+                serviceCar.setLastName(rs.getString("fname"));
+                serviceCar.setFirstName(rs.getString("lname"));
+                serviceCar.setDir(rs.getString("address"));
+                serviceCar.setIdServ(rs.getString("service_id"));
+                serviceCar.setDesc(rs.getString("descripcion_s"));
+                serviceCar.setPrice(rs.getInt("price_s"));
+                serviceCar.setDate(rs.getString("date_s"));
+                serviceCars.add(serviceCar);
+            }
+            return serviceCars;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

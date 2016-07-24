@@ -9,16 +9,17 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "car")
 @SessionScoped
-public class Car {
+public class Car extends Client{
 
-    private String id;
+    private String idCar;
     private String brand;
     private String model;
     private String color;
     private String idClient;
 
-    public Car(String id, String brand, String model, String color, String idClient){
-        this.setId(id);
+    public Car(String id, String firstName, String lastName, String dir, String idCar, String brand, String model, String color){
+        super(id,firstName,lastName,dir);
+        this.setIdCar(idCar);
         this.setBrand(brand);
         this.setModel(model);
         this.setColor(color);
@@ -28,12 +29,12 @@ public class Car {
     public Car(){
     }
 
-    public String getId() {
-        return id;
+    public String getIdCar() {
+        return idCar;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdCar(String idCar) {
+        this.idCar = idCar;
     }
 
     public String getBrand() {

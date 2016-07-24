@@ -1,8 +1,10 @@
 package pe.edu.utp.jsftuningcar.viewController;
 
+import com.oracle.webservices.internal.api.message.PropertySet;
 import pe.edu.utp.jsftuningcar.models.*;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.naming.InitialContext;
@@ -11,6 +13,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +25,6 @@ import java.util.Map;
 @SessionScoped
 public class TCServiceFacade {
     private Connection connection;
-
 
     public Connection getConnection() {
         return connection;
@@ -59,11 +61,17 @@ public class TCServiceFacade {
         serviceCarsEntity.setConnection(connection);
         return serviceCarsEntity;
     }
+    private CarsEntity getCarsEntity(){
+        CarsEntity carsEntity = new CarsEntity();
+        carsEntity.setConnection(connection);
+        return carsEntity;
+    }
 
     //Edit and Add
 
     private Client client = new Client();
     private ServiceCar serviceCar = new ServiceCar();
+    private Car car = new Car();
     //catch params Edit
     public Client getClientParam(){
         FacesContext fc = FacesContext.getCurrentInstance();
@@ -82,13 +90,18 @@ public class TCServiceFacade {
         FacesContext fc = FacesContext.getCurrentInstance();
 
         Map<String,String> param= fc.getExternalContext().getRequestParameterMap();
-        getServiceCar().setFirstName(param.get("selectServiceCarToReserveClientF"));
-        getServiceCar().setLastName(param.get("selectServiceCarToReserveClientL"));
-        getServiceCar().setDir(param.get("selectServiceCarToReserveClientD"));
-        getServiceCar().setDesc(param.get("selectServiceCarToReserveClientDesc"));
-        getServiceCar().setPrice(Integer.parseInt(param.get("selectServiceCarToReserveClientP")));
-        getServiceCar().setDate(param.get("selectServiceCarToReserveClientDate"));
-        return getServiceCar();
+        serviceCar.setId(param.get("Id"));
+        serviceCar.setFirstName(param.get("Fn"));
+        serviceCar.setLastName(param.get("Ln"));
+        serviceCar.setDir(param.get("Dir"));
+        serviceCar.setDesc(param.get("Desc"));
+        serviceCar.setPrice(Integer.parseInt(param.get("Pr")));
+        serviceCar.setDate(param.get("Date"));
+        serviceCar.setBrand(param.get("Br"));
+        serviceCar.setModel(param.get("Mo"));
+        serviceCar.setColor(param.get("Co"));
+
+        return serviceCar;
     }*/
 
 
@@ -102,6 +115,12 @@ public class TCServiceFacade {
         return serviceCar;
     }
     public void setServiceCar(ServiceCar serviceCar) { this.serviceCar = serviceCar; }
+    public Car getCar() {
+        return car;
+    }
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
 
     //edit client
@@ -139,12 +158,16 @@ public class TCServiceFacade {
 
         Client cli = new Client();
         ServiceCar ser = new ServiceCar();
+        Car car = new Car();
         FacesContext fc1 = FacesContext.getCurrentInstance();
 
         Map<String,String> param= fc1.getExternalContext().getRequestParameterMap();
         cli.setFirstName(param.get("Fn"));
         cli.setLastName(param.get("Ln"));
         cli.setDir(param.get("Dir"));
+        car.setBrand(param.get("Br"));
+        car.setModel(param.get("Mo"));
+        car.setColor(param.get("Co"));
         ser.setDesc(param.get("Desc"));
         ser.setPrice(Integer.parseInt(param.get("Price")));
         ser.setDate(param.get("Date"));
@@ -152,15 +175,19 @@ public class TCServiceFacade {
         cli.setFirstName(getServiceCar().getFirstName());
         cli.setLastName(getServiceCar().getLastName());
         cli.setDir(getServiceCar().getDir());
+        car.setBrand(getServiceCar().getBrand());
+        car.setModel(getServiceCar().getModel());
+        car.setColor(getServiceCar().getColor());
         ser.setDesc(getServiceCar().getDesc());
         ser.setPrice(getServiceCar().getPrice());
         ser.setDate(getServiceCar().getDate());
 
         getServiceCarsEntity().addClient(cli);
         getServiceCarsEntity().addService(ser);
+        getServiceCarsEntity().addCar(car);
 
         try {
-            getserviceCars();
+            getServiceCars();
             FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCarWeb/index.xhtml");
         } catch (IOException e) {
             e.printStackTrace();
@@ -173,17 +200,20 @@ public class TCServiceFacade {
 
         Client cli = new Client();
         ServiceCar ser = new ServiceCar();
+        Car car = new Car();
         FacesContext fc1 = FacesContext.getCurrentInstance();
 
         Map<String,String> param= fc1.getExternalContext().getRequestParameterMap();
         cli.setId(param.get("Id"));
         ser.setIdClient(getClient().getId());
+        car.setIdClient(getClient().getId());
 
         getServiceCarsEntity().deleteClient(cli);
         getServiceCarsEntity().deleteService(ser);
+        getServiceCarsEntity().deleteCar(car);
 
         try {
-            getserviceCars();
+            getServiceCars();
             FacesContext.getCurrentInstance().getExternalContext().redirect("/JSFTuningCarWeb/ListClients.xhtml");
         } catch (IOException e) {
             e.printStackTrace();
@@ -201,12 +231,19 @@ public class TCServiceFacade {
         return getClientsEntity().getClients();
     }
 
-    public List<ServiceCar> getserviceCars(){ return getServiceCarsEntity().getServiceCarsList(); }
+    public List<ServiceCar> getServiceCars(){ return getServiceCarsEntity().getServiceCarsList(); }
+
+    public List<Car> getCars(){
+        return getCarsEntity().getCars();
+    }
+
+    public List<ServiceCar> getServiceCarforClient(){
+        return getServiceCarsEntity().getServiceClient();
+    }
 
     //Cantidad de clientes y accesorios
 
     public int getClientsCount() { return getClientsEntity().getClients().size(); }
 
     public int getAcessoriesCount() { return getAccessoriesEntity().getAccessories().size(); }
-
 }

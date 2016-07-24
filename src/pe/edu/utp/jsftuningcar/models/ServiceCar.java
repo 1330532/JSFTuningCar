@@ -7,17 +7,17 @@ import javax.faces.bean.SessionScoped;
  * Created by Vanessa on 21/07/2016.
  *
  */
-@ManagedBean(name = "servicecar")
+@ManagedBean(name = "serviceCar")
 @SessionScoped
-public class ServiceCar extends Client{
+public class ServiceCar extends Car{
     private String idServ;
     private String desc;
     private int price;
     private String date;
-    private String idClient;
+    private String idClientCar;
 
-    public ServiceCar(String id, String firstName,String lastName, String dir, String idServ, String desc, int price, String date){
-        super(id,firstName,lastName,dir);
+    public ServiceCar(String id, String firstName,String lastName, String dir, String idCar, String brand, String model, String color, String idServ, String desc, int price, String date){
+        super(id, firstName, lastName, dir, idCar, brand, model, color);
         this.setIdServ(idServ);
         this.setDesc(desc);
         this.setPrice(price);
@@ -61,11 +61,11 @@ public class ServiceCar extends Client{
         this.date = date;
     }
 
-    public String getIdClient() {
-        return idClient;
+    public String getIdClientCar() {
+        return idClientCar;
     }
 
-    public void setIdClient(String idClient) {
-        this.idClient = idClient;
+    public void setIdClientCar(String idClientCar) {
+        this.idClientCar = idClientCar;
     }
 }
