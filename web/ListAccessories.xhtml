@@ -1,47 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<center>
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>List Accessories</title>
+</h:head>
+<h:body>
+    <center>
 <f:view>
     <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
     <br/><br/>
     <h1>Accessories Table</h1>
     <br/><br/>
     <h:form>
-    <h:commandButton id="index1" value="Back" action="index"/>
+    <b:commandButton id="index1" value="Back" action="index"/>
     </h:form>
     <br/><br/>
     <br/>
     <h:outputLabel value="Count Accesories: #{tcservicefacade.acessoriesCount}"/>
     <br/>
-    <h:dataTable value="#{tcservicefacade.accesories}" var="accessory">
-        <h:column>
-            <f:facet name="header"> ID </f:facet>
-            #{accessory.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header"> Description </f:facet>
-            #{accessory.desc}
-        </h:column>
-        <h:column>
-            <f:facet name="header"> Price </f:facet>
-            #{accessory.price}
-        </h:column>
-        <h:column>
-            <f:facet name="header"> Stock </f:facet>
-            #{accessory.cant}
-        </h:column>
 
-        <h:column>
-            <f:facet name="header"> Articulo </f:facet>
-            <h:graphicImage value="/img/#{accessory.id}.jpg" width="300" height="300"/>
-            <br></br>
-        </h:column>
-    </h:dataTable>
+    <b:dataTable value="#{tcservicefacade.accesories}" var="accessory">
+    <b:dataTableColumn value="#{accessory.id}" />
+    <b:dataTableColumn value="#{accessory.desc}" />
+    <b:dataTableColumn value="#{accessory.price}" />
+    <b:dataTableColumn value="#{accessory.cant}" />
+    <b:dataTableColumn >
+        <f:facet name="header"> Articulo </f:facet>
+        <h:graphicImage value="/img/#{accessory.id}.jpg" width="300" height="300"/>
+        <br></br>
+    </b:dataTableColumn>
+    </b:dataTable>
+
 </f:view>
 </center>
+</h:body>
 </html>

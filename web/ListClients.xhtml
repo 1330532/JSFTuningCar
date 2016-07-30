@@ -1,61 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>List Accessories</title>
+</h:head>
+<h:body>
 <center>
-<f:view>
-    <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
-    <br/><br/>
-    <h1>Clients Table</h1>
-    <br/><br/>
-    <h:form>
-        <h:commandButton id="index" value="Back" action="index"/><br/>
-        <!--h:commandButton id="userDetail" value="Table Detail" action="userDetail"/-->
-    </h:form>
-    <br/><br/>
-    <br/>
-    <h:outputLabel value="Count Clients: #{tcservicefacade.clientsCount}"/>
-    <br/>
-    <h:dataTable value="#{tcservicefacade.clients}" var="client">
-        <h:column>
-            <f:facet name="header"> ID </f:facet>
-            #{client.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header"> First Name </f:facet>
-            #{client.firstName}
-        </h:column>
-        <h:column>
-            <f:facet name="header"> Last Name </f:facet>
-            #{client.lastName}
-        </h:column>
-        <h:column>
-            <f:facet name="header"> Address </f:facet>
-            #{client.dir}
-        </h:column>
-        <h:column>
-            <f:facet name="Header"> Actions </f:facet>
-            <h:form>
-                <h:commandLink value=" Edit " action="EditClient" actionListener="#{tcservicefacade.getClientParam}">
-                    <f:param name="selectClientToEditId" value="#{client.id}"/>
-                    <f:param name="selectClientToEditF" value="#{client.firstName}"/>
-                    <f:param name="selectClientToEditL" value="#{client.lastName}"/>
-                    <f:param name="selectClientToEditD" value="#{client.dir}"/>
-                </h:commandLink>
-            </h:form>
-        </h:column>
-        <h:column>
-            <f:facet name="Header"> More Actions </f:facet>
-            <h:form >
-                <h:commandLink value=" Delete " action="#{tcservicefacade.deleteReservClient}">
-                    <f:param name="Id" value="#{client.id}"/>
-                </h:commandLink>
-            </h:form>
-        </h:column>
-    </h:dataTable>
-</f:view>
+    <f:view>
+        <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
+        <br/><br/>
+        <h1>Clients Table</h1>
+        <br/><br/>
+        <h:form>
+            <b:commandButton id="index" value="Back" action="index"/><br/>
+            <!--h:commandButton id="userDetail" value="Table Detail" action="userDetail"/-->
+        </h:form>
+        <br/><br/>
+        <br/>
+        <h:outputLabel value="Count Clients: #{tcservicefacade.clientsCount}"/>
+        <br/>
+
+        <h:dataTable value="#{tcservicefacade.clients}" var="client">
+            <h:column>
+                <f:facet name="header"> ID </f:facet>
+                #{client.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> First Name </f:facet>
+                #{client.firstName}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> Last Name </f:facet>
+                #{client.lastName}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> Address </f:facet>
+                #{client.dir}
+            </h:column>
+            <h:column>
+                <f:facet name="Header"> Actions </f:facet>
+                <h:form>
+                    <h:commandLink value=" Edit " action="EditClient" actionListener="#{tcservicefacade.getClientParam}">
+                        <f:param name="selectClientToEditId" value="#{client.id}"/>
+                        <f:param name="selectClientToEditF" value="#{client.firstName}"/>
+                        <f:param name="selectClientToEditL" value="#{client.lastName}"/>
+                        <f:param name="selectClientToEditD" value="#{client.dir}"/>
+                    </h:commandLink>
+                </h:form>
+            </h:column>
+            <h:column>
+                <f:facet name="Header"> More
+                    Actions </f:facet>
+                <h:form >
+                    <h:commandLink value=" Delete " action="#{tcservicefacade.deleteReservClient}">
+                        <f:param name="Id" value="#{client.id}"/>
+                    </h:commandLink>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+    </f:view>
 </center>
+</h:body>
 </html>

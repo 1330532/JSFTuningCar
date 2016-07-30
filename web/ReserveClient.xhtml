@@ -1,42 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>List Accessories</title>
+</h:head>
+<h:body>
+<center>
 <f:view>
     <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
     <h:form id="AddClient">
         <br/><br/>
         <h1>Add New Client</h1>
         <br/><br/>
+        <h:panelGrid columns="2" cellpadding="5">
         <h:outputLabel for="txtDate" value="Date"/><br/><br/>
-        <h:inputText id="txtDate" value="#{tcservicefacade.serviceCar.date}"/><br/><br/>
+        <b:inputText id="txtDate" value="#{tcservicefacade.serviceCar.date}"/><br/><br/>
 
         <h:outputLabel for="txtFN" value="First Name"/><br/><br/>
-        <h:inputText id="txtFN" value="#{tcservicefacade.serviceCar.firstName}"/><br/><br/>
+        <b:inputText id="txtFN" value="#{tcservicefacade.serviceCar.firstName}"/><br/><br/>
 
         <h:outputLabel for="txtLN" value="Last Name"/><br/><br/>
-        <h:inputText id="txtLN" value="#{tcservicefacade.serviceCar.lastName}"/><br/><br/>
+        <b:inputText id="txtLN" value="#{tcservicefacade.serviceCar.lastName}"/><br/><br/>
 
         <h:outputLabel for="txtBrand" value="Brand Car"/><br/><br/>
-        <h:inputText id="txtBrand" value="#{tcservicefacade.serviceCar.brand}"/><br/><br/>
+        <b:inputText id="txtBrand" value="#{tcservicefacade.serviceCar.brand}"/><br/><br/>
 
         <h:outputLabel for="txtModel" value="Model Car"/><br/><br/>
-        <h:inputText id="txtModel" value="#{tcservicefacade.serviceCar.model}"/><br/><br/>
+        <b:inputText id="txtModel" value="#{tcservicefacade.serviceCar.model}"/><br/><br/>
 
         <h:outputLabel for="txtColor" value="Color Car"/><br/><br/>
-        <h:inputText id="txtColor" value="#{tcservicefacade.serviceCar.color}"/><br/><br/>
+        <b:inputText id="txtColor" value="#{tcservicefacade.serviceCar.color}"/><br/><br/>
 
         <h:outputLabel for="txtDir" value="Address"/><br/><br/>
-        <h:inputText id="txtDir" value="#{tcservicefacade.serviceCar.dir}"/><br/><br/>
+        <b:inputText id="txtDir" value="#{tcservicefacade.serviceCar.dir}"/><br/><br/>
 
         <h:outputLabel for="txtPrice" value="Price Aprox."/><br/><br/>
-        <h:inputText id="txtPrice" value="#{tcservicefacade.serviceCar.price}"/><br/><br/>
+        <b:inputText id="txtPrice" value="#{tcservicefacade.serviceCar.price}">
+            <f:facet name="prepend">
+                <h:outputText value="$" />
+            </f:facet>
+            <f:facet name="append">
+            <h:outputText value=".00" />
+            </f:facet>
+        </b:inputText><br/><br/>
 
         <h:outputLabel for="txtDesc" value="Description"/><br/><br/>
-        <h:inputTextarea id="txtDesc" value="#{tcservicefacade.serviceCar.desc}" rows="4" cols="20"/><br/><br/>
+        <b:inputTextarea id="txtDesc" value="#{tcservicefacade.serviceCar.desc}" rows="4" cols="20"/><br/><br/>
+        </h:panelGrid>
 
         <h:commandButton value="Update" action="#{tcservicefacade.addReservClient}">
             <f:param name="Fn" value="#{tcservicefacade.serviceCar.firstName}"/>
@@ -52,4 +65,6 @@
         <h:commandButton id="index" value="BACK" action="index"/>
     </h:form>
 </f:view>
+</center>
+</h:body>
 </html>
