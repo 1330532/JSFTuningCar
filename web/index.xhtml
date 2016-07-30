@@ -5,56 +5,43 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-    <title>BootsFaces Basic Page</title>
+    <title>D'INTEGRATED TUNING CAR WEB</title>
 </h:head>
 <h:body>
     <center>
-
-
 
 <h:form>
     <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
     <br/><br/>
     <h:form>
-        <b:navBar brand="Principal" brandHref="#">
+        <b:navBar brand="Principal" brandHref="/JSFTuningCarWeb/index.xhtml">
             <b:navbarLinks>
-                <b:navLink value="Anterior" href="#"></b:navLink>
-                <b:navLink value="ahora" href="#"></b:navLink>
-                <b:navLink value="mañana" href="#"></b:navLink>
-                <b:dropMenu value="Desplegable">
-                    <b:navLink value="Action" href="#"></b:navLink>
-                    <b:navLink value="Nuestros trabajos" href="#"></b:navLink>
-                    <b:navLink value="Algo mas" href="#"></b:navLink>
-                    <b:navLink></b:navLink>
-                    <b:navLink header="Nav header"></b:navLink>
-                    <b:navLink value="Referencias" href="#"></b:navLink>
-                    <b:navLink value="Nuestros locales" href="#"></b:navLink>
+                <b:dropMenu value="Shortcuts">
+                    <b:navLink value="About Tuning Car" href="/JSFTuningCarWeb/aboutTuning.xhtml"></b:navLink>
+                    <b:navLink value="Our Accesories" href="/JSFTuningCarWeb/ListAccessories.xhtml"></b:navLink>
+                    <b:navLink value="Reservation" href="/JSFTuningCarWeb/ReserveClient.xhtml"></b:navLink>
+                    <b:navLink value="Check a Reservation" href="/JSFTuningCarWeb/ListClients.xhtml"></b:navLink>
+                    <b:navLink value="Referents" href="/JSFTuningCarWeb/referents.xhtml"></b:navLink>
                 </b:dropMenu>
             </b:navbarLinks>
         </b:navBar>
-
-
     </h:form>
+
     <h1><b>How would you like to customize your car?</b></h1>
     <br/>
 
     <br/><br/>
 </h:form>
 
-
-
 <table>
     <tbody>
     <tr>
-
-
-
       <h:form>
           <b:carousel id="tiovivo" style="width:800px" interval="2500">
               <b:carouselItem >
                   <img src="img/nx.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
                   <b:carouselCaption>
-                      <h3>Personaliza tu maquina !!!</h3>
+                      <h3>Come and personalize a car !!!</h3>
 
                   </b:carouselCaption>
               </b:carouselItem>
@@ -67,14 +54,16 @@
               <b:carouselItem>
                   <img src="img/gt.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
                   <b:carouselCaption>
-                      <h3>Tu imagen</h3>
-                      <p>Consigue lo que quieras !!!.</p>
+                      <h3>Your imagen</h3>
+                      <p>Get all you Want !!!.</p>
                   </b:carouselCaption>
               </b:carouselItem>
               <b:carouselItem caption="Maximo desempeño !!!">
                   <img src="img/azul.jpeg" alt="Valladolid" style="width: 800px; height: 600px" />
               </b:carouselItem>
           </b:carousel>
+
+          <br/><br/>
           <h3>Come and personalize a car how you prefer. In Tuning Car Web, Everybody can have the car that they've dreamed of. And even better.</h3>
 
           <h:form id="index">
@@ -105,7 +94,7 @@
 
     <b:container>
         <b:row>
-            //aqui pueden seguir colocando
+            <!--//aqui pueden seguir colocando-->
         </b:row>
     </b:container>
     </center>
