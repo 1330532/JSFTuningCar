@@ -6,6 +6,9 @@
       <element id="directory" name="web.war">
         <element id="artifact" artifact-name="JSFTuningCar:war exploded" />
       </element>
+      <element id="directory" name="lib">
+        <element id="file-copy" path="$USER_HOME$/Downloads/BootsFaces-OSP-0.9.1-dist.jar" />
+      </element>
     </root>
   </artifact>
 </component>

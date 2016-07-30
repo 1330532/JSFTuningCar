@@ -1,45 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://java.sun.com/jsf/html">
-<head>
-</head>
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>BootsFaces Basic Page</title>
+</h:head>
+<h:body>
+    <center>
 
-<body>
-<center>
 
-<f:view>
-   <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
-   <br/><br/>
-   <h1><b>How would you like to customize a car?</b></h1>
-   <br/>
-   <h3>Come and personalize a car how you prefer. In Tuning Car Web, Everybody can have the car that they've dreamed of. And even better.</h3>
-   <br/><br/>
 
-   <h:graphicImage value="/img/nx.jpg" width="1200" height="750"/>
+<h:form>
+    <div class="color-bar" style="background-color: black"><div class="container"><h1 style="text-align: match-parent"><b><font color="#f5f5f5">TUNING CARS</font></b></h1></div></div>
+    <br/><br/>
+    <h:form>
+        <b:navBar brand="Principal" brandHref="#">
+            <b:navbarLinks>
+                <b:navLink value="Anterior" href="#"></b:navLink>
+                <b:navLink value="ahora" href="#"></b:navLink>
+                <b:navLink value="mañana" href="#"></b:navLink>
+                <b:dropMenu value="Desplegable">
+                    <b:navLink value="Action" href="#"></b:navLink>
+                    <b:navLink value="Nuestros trabajos" href="#"></b:navLink>
+                    <b:navLink value="Algo mas" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Nav header"></b:navLink>
+                    <b:navLink value="Referencias" href="#"></b:navLink>
+                    <b:navLink value="Nuestros locales" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+        </b:navBar>
 
-   <br></br>
-   <h:form id="index">
-      <br/><br/><br/><br/>
-      <h1><b>Would you like to register a reservation?</b></h1>
-      <br/><br/>
-      <h:commandButton id="ReserveClient" value="Register a Reservation" action="ReserveClient"/>
-      <br/><br/>
-      <h1><b>Would you like to check the reservation?</b></h1>
-      <br/><br/>
-      <h:commandButton id="ListClients" value="Check" action="ListClients"/>
-      <br/><br/>
-      <h1><b>Would you like to see what accessories we have?</b></h1>
-      <br/><br/>
-      <h:commandButton id="ListAccessories" value="List Accessories" action="ListAccessories"/>
-      <br/><br/><br/><br/>
-      <b:outputLabel value="Welcome" style="text-align: center" />
-   </h:form>
-</f:view>
-</center>
-</body>
 
+    </h:form>
+    <h1><b>How would you like to customize your car?</b></h1>
+    <br/>
+
+    <br/><br/>
+</h:form>
+
+
+
+<table>
+    <tbody>
+    <tr>
+
+
+
+      <h:form>
+          <b:carousel id="tiovivo" style="width:800px" interval="2500">
+              <b:carouselItem >
+                  <img src="img/nx.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+                  <b:carouselCaption>
+                      <h3>Personaliza tu maquina !!!</h3>
+
+                  </b:carouselCaption>
+              </b:carouselItem>
+              <b:carouselItem caption="Lucete en las pistas !!!">
+                  <img src="img/rojo.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+              </b:carouselItem>
+              <b:carouselItem caption="Ten el mejor performance !!!">
+                  <img src="img/negro.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+              </b:carouselItem>
+              <b:carouselItem>
+                  <img src="img/gt.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+                  <b:carouselCaption>
+                      <h3>Tu imagen</h3>
+                      <p>Consigue lo que quieras !!!.</p>
+                  </b:carouselCaption>
+              </b:carouselItem>
+              <b:carouselItem caption="Maximo desempeño !!!">
+                  <img src="img/azul.jpeg" alt="Valladolid" style="width: 800px; height: 600px" />
+              </b:carouselItem>
+          </b:carousel>
+          <h3>Come and personalize a car how you prefer. In Tuning Car Web, Everybody can have the car that they've dreamed of. And even better.</h3>
+
+          <h:form id="index">
+              <br/><br/><br/><br/>
+              <h1><b>Would you like to register a reservation?</b></h1>
+              <br/><br/>
+              <h:commandButton id="ReserveClient" value="Register a Reservation" action="ReserveClient"/>
+              <br/><br/>
+              <h1><b>Would you like to check the reservation?</b></h1>
+              <br/><br/>
+              <h:commandButton id="ListClients" value="Check" action="ListClients"/>
+              <br/><br/>
+              <h1><b>Would you like to see what accessories we have?</b></h1>
+              <br/><br/>
+              <h:commandButton id="ListAccessories" value="List Accessories" action="ListAccessories"/>
+              <br/><br/><br/><br/>
+
+          </h:form>
+
+
+      </h:form>
+
+
+
+    </tr>
+    </tbody>
+</table>
+
+    <b:container>
+        <b:row>
+            //aqui pueden seguir colocando
+        </b:row>
+    </b:container>
+    </center>
+</h:body>
 </html>
