@@ -37,14 +37,14 @@
     <h:outputLabel value="Count Accesories: #{tcservicefacade.acessoriesCount}"/>
     <br/>
 
-    <b:dataTable value="#{tcservicefacade.accesories}" var="accessory">
+    <b:dataTable value="#{tcservicefacade.accesories}" var="accessory" content="width=device-width, initial-scale=1">
     <b:dataTableColumn value="#{accessory.id}" />
     <b:dataTableColumn value="#{accessory.desc}" />
     <b:dataTableColumn value="#{accessory.price}" />
     <b:dataTableColumn value="#{accessory.cant}" />
     <b:dataTableColumn >
         <f:facet name="header"> Articulo </f:facet>
-        <h:graphicImage value="/img/#{accessory.id}.jpg" width="300" height="300"/>
+        <h:graphicImage value="/img/#{accessory.id}.jpg" width="100" height="100"/>
         <br></br>
     </b:dataTableColumn>
     </b:dataTable>

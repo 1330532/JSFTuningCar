@@ -38,7 +38,7 @@
         <h:outputLabel value="Count Clients: #{tcservicefacade.clientsCount}"/>
         <br/>
 
-        <h:dataTable value="#{tcservicefacade.clients}" var="client">
+        <h:dataTable value="#{tcservicefacade.clients}" var="client" content="width=device-width, initial-scale=1">
             <h:column>
                 <f:facet name="header"> ID </f:facet>
                 #{client.id}
